@@ -1,0 +1,28 @@
+<block wx:for="{{dataList}}" wx:key="index">
+	<view class="itemRoot">
+		<view class="descRoot">
+			<text class="desc">{{item.desc}}</text>
+		</view>
+		<view class="imgRoot">
+			<block 
+        class="imgList" 
+        wx:for="{{item.sourceInfoList}}" 
+        wx:for-item="sourceInfo" 
+        wx:for-index="idx" 
+        wx:key="idx"
+        >
+				<view 
+          data-img='{{sourceInfo.cloudThumbUrl}}'
+          data-data_list_index="{{index}}"
+          data-source_info_list_idx="{{idx}}" 
+          bindtap="preview"
+          class="img-wrapper">
+						<!-- <view class="thumb-wrapper"> -->
+							<image class="thumb" src='{{sourceInfo.cloudThumbUrl}}' mode='aspectFill' ></image>
+						<!-- </view> -->
+					<image class="play" src="../../images/play.png" wx:if="{{sourceInfo.type == 'video'}}"></image>
+				</view>
+			</block>
+		</view>
+	</view>
+</block>

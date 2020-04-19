@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/picture/picture",
+    "pages/video/video",
+    "pages/videoplay/videoplay"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "柚花推广",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3385ff;",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/images/home_light.png",
+        "selectedIconPath": "/images/home_fill_light.png"
+      },
+      {
+        "pagePath": "pages/picture/picture",
+        "text": "发图片",
+        "iconPath": "/images/picture_light.png",
+        "selectedIconPath": "/images/picture_fill_light.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "发视频",
+        "iconPath": "/images/video_light.png",
+        "selectedIconPath": "/images/video_fill_light.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

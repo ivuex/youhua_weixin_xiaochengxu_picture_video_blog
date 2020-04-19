@@ -1,0 +1,46 @@
+<!--pages/picture/picture.wxml-->
+
+<view class="desc-textarea-box">
+<textarea 
+  class="desc"
+  placeholder="请输入内容"
+  bindinput="getInput"
+></textarea>
+</view>
+
+
+<view class="imageRootAll">
+
+  <block
+    wx:for="{{sourceInfoList}}"
+    wx:key="{{index}}"
+  >
+    <view class="imgItem">
+      <image class="img" src="{{item.tmpThumbUrl}}" mode="aspectFill"></image>
+      <image
+        class="closeImg"
+        bindtap="deleteVedioFromPage"
+        src="../../images/close.png"
+        data-index="{{index}}"
+        ></image>
+    </view>
+
+  </block>
+
+  <!-- 选择视频按钮 -->
+  <view
+    class="imgItem"
+    bindtap="chooseVideo"
+    >
+      <image
+        class="photo"
+        src="../../images/photo.png"></image>
+  </view>
+
+</view>  
+
+
+<button 
+  type="primary"
+  bindtap="publish"
+>发布视频</button>

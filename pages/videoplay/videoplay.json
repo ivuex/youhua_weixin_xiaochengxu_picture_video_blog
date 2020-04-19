@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "barrage": "miniprogram-barrage"
+  },
+  "navigationBarTitleText": "视频播放"
+}

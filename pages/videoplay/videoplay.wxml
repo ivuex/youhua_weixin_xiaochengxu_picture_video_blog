@@ -1,0 +1,69 @@
+<!--pages/videoplay/videoplay.wxml-->
+
+<!-- <view class="section tc">
+  <video src="{{src}}"   controls ></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+  </view>
+</view> -->
+
+
+<!-- 
+  danmu-list:弹幕列表
+  enable-danmu:是否显示弹幕
+  danmu-btn:弹幕按钮
+  controls:是否显示视频控件，并没有什么用
+ -->
+<!-- <view class="section tc"> -->
+
+	<!-- <video id="myVideo" class="video" src="{{videoSrc}}" loop controls bindfullscreenchange="fullscreenchange" vslide-gesture vslide-gesture-in-fullscreen autoplay enable-play-gesture> -->
+<!-- 如果为video加上loop (自动重播属性，就不能触发 onPause 事件，进而不能上传弹幕到云) -->
+<video
+  id="myVideo" 
+  class="video" 
+  src="{{videoSrc}}" 
+  bindfullscreenchange="fullscreenchange" 
+  bindtimeupdate="onPlayTimeUpdate"
+  bindplay="onPlay"
+  bindended="onEnded"
+  bindpause="onPause"
+  
+  controls
+  enable-danmu 
+  vslide-gesture 
+  vslide-gesture-in-fullscreen 
+  autoplay 
+  enable-play-gesture
+  >
+  <!-- 在barrage上加入 style="visibility:hidden" 避免弹幕在播放前或结束后挡住audo播放功能交互 -->
+		<barrage 
+      style="visibility:hidden"
+      class="barrage"
+      wx:if="{{toggle}}"></barrage>
+	</video>
+	<!-- <video 
+    id="myVideo"
+    src="{{videoSrc}}" 
+    binderror="videoErrorCallback" 
+    danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video> -->
+	<!-- <view class="btn-area"> -->
+		<!-- <button bindtap="bindButtonTap">获取视频</button> -->
+		<view class="input-box">
+    <input
+      value="{{inputValue}}"
+      bindblur="onInput" 
+      auto-focus
+      maxlength="20"
+      placeholder="输入弹幕内容"
+      bindconfirm="onSubmitDanmu"
+    />
+    </view>
+    
+		<button 
+      type="primary"
+      bindtap="onSubmitDanmu">发送弹幕</button>
+	<!-- </view> -->
+<!-- </view> -->
+
+<!-- 现在的video就下面三个属性 -->
+<!-- <video src="" binderror="onVideoErrorCallback" hidden></video> -->
